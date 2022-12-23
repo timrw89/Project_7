@@ -1,5 +1,5 @@
 //Alert
- const alertBanner = document.getElementById("alert");
+const alertBanner = document.getElementById("alert");
 
     let bellAlert = document.getElementById('belldot');
     
@@ -152,32 +152,8 @@ send.addEventListener ('click', () => {
 
 });
 
-//storage send
-const searchBar = document.getElementById('userField')
-const userMessage = document.getElementById('messageField')
 
 
-createStorageList();
 
-// Retrieve searches from Local Storage, return an array
-function getRecentSearches() {
-    const searches = localStorage.getItem('recentSearches');
-    if (searches) {
-        return JSON.parse(searches);
-    }
-}
 
-function createStorageList() {
-    const searchList = getRecentSearches();
-    searchList.forEach (searchItem => {
-        createItem(searchItem);
-    });
-}
 
-searchForm.addEventListener('submit', () => {
-    const searches = getRecentSearches();
-    const searchString = searchBar.value;
-    searches.push(searchString)
-    localStorage.setItem('recentSearches', JSON.stringify(searches));
-    createItem(searchString);
-});

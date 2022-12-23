@@ -153,8 +153,8 @@ header p, header h3 {
 
 .tab {
     height: auto;
-    border-left: 1px solid #bdb2b2;
-    border-bottom: 1px solid #bdb2b2;
+    border-left: 1px solid #a7a5a5;
+    border-bottom: 1px solid #a7a5a5;
     height: 100%;
     width: 100%;
 }
@@ -253,7 +253,7 @@ canvas {
 /*Charts*/
 
 .traffic {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #a7a5a5;
     
 }
 
@@ -269,7 +269,6 @@ canvas {
     margin: 2px;
     padding: 8px 8px;
     border-radius: 50px;
-    background-color: none;
     text-align: center;
     font-weight: bold;
 }
@@ -280,19 +279,18 @@ canvas {
     margin: 2px;
     padding: 8px 8px;
     border-radius: 50px;
-    background-color: none;
     text-align: center;
     font-weight: bold;
 }
 
 .daily {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #a7a5a5;
     
     
 }
 
 .mobile-users {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #a7a5a5;
     
 }
 
@@ -315,7 +313,7 @@ canvas {
     margin:5px;
     padding-bottom: 10px;
     width: 100%;
-    border: rgb(175, 175, 175) solid 1px;
+    border: #a7a5a5 solid 1px;
     border-radius: 5px;
     background-color: #eeeeee;  
 }
@@ -361,7 +359,7 @@ canvas {
     justify-content: center;
     flex-direction: column;
     padding: 15px 10px;
-    border-bottom:rgb(161, 161, 161) 1px solid;
+    border-bottom:#a7a5a5 1px solid;
 }
 .members-container a {
     color:rgba(158, 149, 236);
@@ -391,13 +389,18 @@ canvas {
     justify-content: center;
     flex-direction: column;
     padding: 15px 10px;
-    border-bottom:rgb(161, 161, 161) 1px solid;  
+    border-bottom:#a7a5a5 1px solid;  
+}
+
+.arrow {
+    display: none;
 }
 .recent-container a {
     color:rgb(0, 0, 0);
     font-weight: bold;
     text-decoration: none;
 }
+
 
 .recent-text {
     display: flex;
@@ -430,7 +433,7 @@ canvas {
     width: 95%;
     height: 45px;
     margin: 5px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid #a7a5a5;
     border-radius: 5px;
 }
 
@@ -438,7 +441,7 @@ canvas {
 .message textarea {
     width: 95%;
     margin: 5px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid #a7a5a5;
     border-radius: 5px;
 }
 
@@ -455,10 +458,18 @@ input, textarea {
     padding: 10px;
 }
 input::placeholder, textarea::placeholder {
-    padding: 10px;
+    padding: 0px 5px 5px 5px;
+}
+
+#MessageForm {
+    padding-left: 10px;
 }
 
 /* SETTINGS */
+
+.settings-wrapper {
+    padding: 10px;
+}
 
 .switch-light {
     display: flex !important;
@@ -540,9 +551,10 @@ select, option {
       }
       .tab-header h3 {
         width: 20%;
-        margin-top: none;
-        padding-top: none;
+        margin-top: 0;
+        padding-top: 0;
       }
+
       .tab {
         width: 100%;
       }
@@ -551,11 +563,19 @@ select, option {
         display: flex;
         justify-content: space-between;
     }
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+    }
       .traffic-nav {
         display: flex;
         justify-content: flex-end;
+        
       }
-    
+     
       .main-content {
         display: grid;
         grid-template-areas: "tab-header tab-header"
@@ -574,15 +594,15 @@ select, option {
         }   
       
     .daily {
-        border-right: 1px solid grey;
-        border-bottom: 1px solid grey;
+        border-right: 1px solid #a7a5a5;
+        border-bottom: 1px solid #a7a5a5;
         
         
     }
     
     .mobile-users {
-        border-left: 1px solid grey;
-        border-bottom: 1px solid grey;
+        border-left: 1px solid #a7a5a5;
+        border-bottom: 1px solid #a7a5a5;
         
     }
     .navigation {
@@ -605,14 +625,18 @@ select, option {
 
   /*New Members*/
 
+   
+
     .members-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        border-right: none;
+        
     }
   
-
+    
     .members-text {
         display: flex;
         flex-direction: row;
@@ -641,9 +665,10 @@ select, option {
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
-        padding: 15px 10px;
-        border-bottom:rgb(161, 161, 161) 1px solid;  
+        
+        border-bottom:#a7a5a5 1px solid;  
         width: 100%;
+        min-height: 99px;
     }
     .recent-container p a {
         color:rgb(0, 0, 0);
@@ -657,15 +682,20 @@ select, option {
     .recent-text {
         display: flex;
         align-items: flex-start;
+        text-align: left;
         flex-direction: column;
-        padding: 15px;
+        padding: 5px;
         width: 100%;
     }
     
-    .recent-container img {
-        height: 70px;
-        width: 70px;
+    .recent-container img, .members-container img {
+        height: 65px;
+        width: 65px;
         border-radius: 50%;
+    }
+
+    .arrow {
+        display: flex;
     }
 
     .widget-container-full {
@@ -695,19 +725,37 @@ select, option {
                               "new activity"
                             "message settings";
                                 
-                                 
-        
         } 
+        .members {
+           border-right:#a7a5a5 solid 1px;
+           border-bottom: #a7a5a5 solid 1px;
+           border-top: 1px solid #a7a5a5;
+            
+        }
         .members-container {
             display: flex;
-           
+            border: none;
+            margin: 5px;
+            
         }
         .recent-container {
-            display: flex; 
-            padding: 5px;
+            display: flex;
+            margin: 5px; 
+            border: none;
+            
         }
+       .desktopborder {
+            border-bottom: 1px solid #a7a5a5;
+            
+       }
+
+       .RecentActivity {
+            border-bottom: #a7a5a5 solid 1px;
+            border-top: 1px solid #a7a5a5;
+       }
+        
         .recent-text {
-            flex-wrap: wrap;
+            justify-content: flex-start;
         }
         .message {
             display: flex;
@@ -715,6 +763,13 @@ select, option {
             flex-direction: column;
             padding-bottom: 15px;
             border-bottom: 1px solid #a7a5a5;
+            border-right: 1px solid #a7a5a5;
+        }
+        #messageField {
+            max-height: 100px;
+        }
+        #settings h3 {
+            padding-bottom: 9px;
         }
         .settings-wrapper {
             width: auto;
